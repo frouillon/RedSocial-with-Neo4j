@@ -1,14 +1,16 @@
 import { useForm } from "react-hook-form";
 import  useLocalStorage  from "../Script/localStorage";
+import { useNavigate } from "react-router-dom";
 
 export default function Home(){
+    const nav = useNavigate();
     const {register,formState:{errors}, handleSubmit} = useForm();
 
     const [formData, setFormData] = useLocalStorage('formData', {});
-
+    console.log(formData)
+    
     const onSubmit = (data) => {
         setFormData(data);
-        console.log(formData)
         try {
             fetch("http://localhost:3000/nodes", {
                 method: "POST",
@@ -24,6 +26,7 @@ export default function Home(){
                 .catch(error => {
                     console.error(error);
                 });
+            nav("/recomendations");
         } catch (error) {
             console.error(error);
         }
