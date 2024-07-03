@@ -36,6 +36,10 @@ const [formData] = useLocalStorage("formData", {});
                     </div>
                     <div className="grid grid-cols-3 gap-4 items-center justify-center">
                         {all.map((recomendation) => (
+                            (formData.Nombre === recomendation.Nombre) 
+                            ?
+                            "" 
+                            :
                             <UserCard
                                 key={recomendation.Descripcion}
                                 Nombre={recomendation.Nombre}

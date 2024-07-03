@@ -38,7 +38,11 @@ export default function Recomendations() {
         </div>
         <div className="grid grid-cols-3 gap-4 items-center justify-center">
           {recomendations.map((recomendation) => (
-            <UserCard
+            (formData.Nombre === recomendation)
+             ?
+             ""
+             :
+             <UserCard
               key={recomendation.Descripcion}
               Nombre={recomendation.Nombre}
               Descripcion={recomendation.Descripcion}
