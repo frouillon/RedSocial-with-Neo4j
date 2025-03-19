@@ -1,0 +1,26 @@
+GET http://localhost:3000/nodes
+
+###sadly, this is not working
+
+GET http://localhost:3000/nodes/programacion
+
+###Hola
+POST http://localhost:3000/nodes
+Content-Type: application/json
+
+{
+  "Nombre": "Jose",
+  "Descripcion": "Me gusta estudiar",
+  "Telefono": "+51999999999",
+  "Hobbies": "Futbol",
+  "Carrera": "Ingenieria de Software"
+}
+
+###hola 
+POST http://localhost:3000/nodes/agregarAmigo
+Content-Type: application/json
+
+{
+    "user1":"Ana Diaz",
+    "user2":"Carlos Fernandez"
+}
